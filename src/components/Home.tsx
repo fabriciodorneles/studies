@@ -1,8 +1,8 @@
 function Home() {
     return (
       <div>
-        <h1>Welcome to our Task Management App</h1>
-        <p>Navigate to the Todo List to manage your tasks</p>
+        <h1>Welcome to Front End Studies</h1>
+        <p>Navigate to the Exercise</p>
       </div>
     )
   }

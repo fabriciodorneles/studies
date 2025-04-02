@@ -3,6 +3,7 @@ import Home from './components/Home'
 import './App.css'
 import { TodoList } from './components/TodoList'
 import { DebouncedSearch } from './components/DebouncedSearch'
+import { DebouncedSearch2 } from './components/DebouncedSearch2'
 
 function App() {
   return (
@@ -33,6 +34,9 @@ function App() {
             <li>
               <Link to="/debounced">Debounced Search</Link>
             </li>
+            <li>
+              <Link to="/debounced2">Debounced Search 2</Link>
+            </li>
           </ul>
         </nav>
 
@@ -44,6 +48,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/todo" element={<TodoList />} />
             <Route path="/debounced" element={<DebouncedSearch />} />
+            <Route path="/debounced2" element={<DebouncedSearch2 />} />
           </Routes>
         </main>
       </div>
