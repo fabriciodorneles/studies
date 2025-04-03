@@ -5,6 +5,7 @@ import { TodoList } from './components/TodoList'
 import { DebouncedSearch } from './components/DebouncedSearch'
 import { DebouncedSearch2 } from './components/DebouncedSearch2'
 import { GitHubSearchProvider } from './context/GitHubSearchProvider'
+import { ApolloLocations } from './components/ApolloLocations'
 
 function App() {
   return (
@@ -39,6 +40,9 @@ function App() {
               <li>
                 <Link to="/debounced2">Debounced Search 2</Link>
               </li>
+              <li>
+                <Link to="/apollo-locations">Apollo Query</Link>
+              </li>
             </ul>
           </nav>
 
@@ -51,6 +55,7 @@ function App() {
               <Route path="/todo" element={<TodoList />} />
               <Route path="/debounced" element={<DebouncedSearch />} />
               <Route path="/debounced2" element={<DebouncedSearch2 />} />
+              <Route path="/apollo-locations" element={<ApolloLocations />} />
             </Routes>
           </main>
         </div>
