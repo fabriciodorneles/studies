@@ -45,26 +45,27 @@ export function TodoList() {
       <button onClick={handleAddTask}> Add Task </button>
       <ul>
         {taskList.map((item) => (
-          <div style={{display:'flex', marginBottom:'6px'}}>
-            <input 
-                type='checkbox' 
-                checked={item.completed} 
-                onClick={() => toggleCompleted(item.id)}/>
-            <li 
-              key={item.id}            
-              style={{ listStyleType: 'none', textDecoration:'line-trough'}}
-            >
-              <span style={{ textDecoration:`${item.completed ? 'line-through' : ''}`}}>
-                {item.task}
-              </span>
-            </li>
-            <button 
-              style={{padding: '0px 4px', borderRadius:'0px', display:'flex', marginLeft:'4px'}}
-              onClick={()=>deleteTask(item.id)}
-            >
-              ❌
-            </button>
-          </div>
+          <li 
+            key={item.id}            
+            style={{ listStyleType: 'none'}}
+          >
+            <div style={{display:'flex', marginBottom:'6px'}}>
+              <input 
+                  type='checkbox' 
+                  checked={item.completed} 
+                  onChange={() => toggleCompleted(item.id)}/>
+                <span style={{ textDecoration:`${item.completed ? 'line-through' : ''}`}}>
+                  {item.task}
+                </span>
+              
+              <button 
+                style={{padding: '0px 4px', borderRadius:'0px', display:'flex', marginLeft:'4px'}}
+                onClick={()=>deleteTask(item.id)}
+              >
+                ❌
+              </button>
+            </div>
+          </li>
         ))}
         </ul>
     </>
