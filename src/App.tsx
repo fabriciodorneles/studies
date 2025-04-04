@@ -6,6 +6,9 @@ import { DebouncedSearch } from './components/DebouncedSearch'
 import { DebouncedSearch2 } from './components/DebouncedSearch2'
 import { GitHubSearchProvider } from './context/GitHubSearchProvider'
 import { ApolloLocations } from './components/ApolloLocations'
+import { ApolloProvider } from '@apollo/client'
+import { locationsClient, spaceXClient } from './services/clients'
+import Launches from './components/ApolloSpaceXList'
 
 function App() {
   return (
@@ -43,6 +46,9 @@ function App() {
               <li>
                 <Link to="/apollo-locations">Apollo Query</Link>
               </li>
+              <li>
+                <Link to="/apollo-spaceX">Apollo Space X List</Link>
+              </li>
             </ul>
           </nav>
 
@@ -55,7 +61,22 @@ function App() {
               <Route path="/todo" element={<TodoList />} />
               <Route path="/debounced" element={<DebouncedSearch />} />
               <Route path="/debounced2" element={<DebouncedSearch2 />} />
-              <Route path="/apollo-locations" element={<ApolloLocations />} />
+              <Route 
+                path="/apollo-locations" 
+                element={
+                  <ApolloProvider client={locationsClient}>
+                    <ApolloLocations />
+                  </ApolloProvider>
+                } 
+              />
+              <Route 
+                path="/apollo-spaceX" 
+                element={
+                  <ApolloProvider client={spaceXClient}>
+                    <Launches />
+                  </ApolloProvider>
+                } 
+              />
             </Routes>
           </main>
         </div>
